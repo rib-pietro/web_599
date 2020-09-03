@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#p1 {
+    margin: 10px auto;
+    margin-top: 30px;
+    padding: 10px;
+    /* border: 2px solid black; */
+    border-width: 10px;
+    border-style: solid;
+    border-color: red;
+    border-radius: 15px;
+    border-bottom-left-radius: 0;
+    width: 200px;
+    height: 300px;
+    background-color: yellow;
+    /* background-image: url('./Prancheta-1.png');
+    background-size: auto 100px;
+    background-repeat: no-repeat;
+    background-position: top 50px left 0px; */
+    /* background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 255, 0, 0.5)),
+                      linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)); */
+    color: white;
+    transition: 1s;
+    transition-property: width;
+}
+
+#p1:hover {
+    background-color: blue;
+    width: 300px;
+    transition-property: width;
+    transition: 1s;
+}
+
+img {
+    width: 500px;
+    height: 150px;
+}

@@ -1,0 +1,70 @@
+body * {
+    border: 1px solid black;
+}
+
+h1#block {
+    width: 300px;
+    height: 70px;
+}
+
+span {
+    display: inline-block   ;
+    width: 200px;
+}
+
+#flex-box {
+    /* display: flex; */
+}
+
+#flex-box > * {
+    /* float: left; */
+}
+
+#overflow {
+    width: 300px;
+    height: 70px;
+    /* overflow: hidden; */
+    overflow-x: auto;
+}
+
+#overflow p {
+    white-space: nowrap;
+}
+
+#pai {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 0, 255, 0.5);
+    position: absolute;
+    z-index: 1;
+    /*top: 100px;
+    left: 100px; */
+}
+
+#filho {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+
+#outro-pai {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    z-index: 2;
+}
+
+#wpp-button {
+    width: 50px;
+    height: 50px;
+    background: green;
+    position: sticky;
+    margin-top: 50px;
+    /* top: 70px;
+    right: 20px; */
+    border-radius: 50%;
+}

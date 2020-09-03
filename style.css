@@ -1,0 +1,44 @@
+* {
+    color: yellow;
+    font-family: 'Open Sans';
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    color: blueviolet;
+    line-height: 1rem;
+    text-decoration: underline;
+}
+
+h1#home {
+    color: chocolate!important;
+    text-align: right;
+    text-orientation: upright;
+    text-transform: capitalize;
+}
+
+p.red {
+    color: #7c2727;
+    text-align: justify;
+    /* comentado */
+}
+
+/* p a {
+    color: cornflowerblue;
+} */
+
+p > * {
+    color: green;
+} 
+
+a[download] {
+    color: blue;
+}
+
+p.fs-30.text-white {
+    font-size: 100vh;
+    color: yellowgreen;
+}

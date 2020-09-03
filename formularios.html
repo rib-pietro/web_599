@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <h1>Formulários</h1>
+    <h2>Exemplo de formulários</h2>
+    <h3>By: Turma 599</h3>
+    <form action="" method="">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" list="nomes"> <br>
+        <datalist id="nomes">
+            <option value="Pietro">
+            <option value="Pedro">
+            <option value="Paulo">
+        </datalist>
+        <label for="sobrenome">Sobrenome</label>
+        <input type="text" name="sobrenome" required id="sobrenome"> <br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email"> <br>
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senha"> <br>
+        <label for="idade">Idade</label>
+        <input type="number" name="idade" id="idade"> <br>
+        <label for="nascimento">Data de Nascimento</label>
+        <input type="date" name="nascimento" id="nascimento"> <br>
+        <label for="sexo">Sexo</label> <br>
+        <input type="radio" name="sexo" id="sexo" value="masculino"> Masculino
+        <input type="radio" name="sexo" id="sexo" value="feminino" checked> Feminino <br>
+        <label for="skills">Skills</label> <br>
+        <input type="checkbox" name="skills" id="skills" value="python"> Python
+        <input type="checkbox" name="skills" id="skills" value="javascript" checked> JavaScript
+        <input type="checkbox" name="skills" id="skills" value="html"> HTML <br>
+        <label for="mensagem">Escreva sua mensagem:</label> <br>
+        <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea> <br>
+        <label for="estado">UF:</label>
+        <select name="estado" id="idade" multiple>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="SP">São Paulo</option>
+            <option value="BA">Bahia</option>
+            <option value="RR">Roraima</option>
+            <option value="">Todos</option>
+        </select>
+        <input type="file" name="" multiple id="">
+        <button type="submit">
+            Enviar
+        </button>
+        <!-- <input type="submit" value="Enviar"> -->
+    </form>
+</body>
+</html>
