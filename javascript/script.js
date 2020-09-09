@@ -58,10 +58,31 @@ function hello() {
 //     return a + b;
 // }
 
-const somar = (a, b) => {
-    const soma = a + b;
-    return soma;
-}
-const subtrair
+// const somar = (a, b) => a + b;
+// const subtrair = (a, b) => a - b;
+// const multiplicar = (a, b) => a * b;
+// const dividir = (a, b) => a / b;
 
-console.log(somar(2, 2.5));
+// const x = 5;
+// const y = 7;
+
+function consoleAny(anything) { // Função de alta ordem
+    console.log(anything);
+}
+
+// const fazerOperacao = (funcaoOperacao, a, b) => funcaoOperacao(a, b);
+
+// console.log(fazerOperacao(somar, x, y));
+
+// console.log(somar(5, 7));
+// console.log(subtrair(5, 2));
+// console.log(multiplicar(3, 2));
+// console.log(dividir(6, 2));
+//           0  1  2  3
+const arr = [9, 3, 5, 7];
+
+// arr.forEach(consoleAny);
+
+arr.forEach((val, ind) => {
+    console.log(val * ind);
+});
