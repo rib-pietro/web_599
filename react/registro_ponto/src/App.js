@@ -4,6 +4,8 @@ import './App.css';
 import UserCard from './components/UserCard/UserCard';
 import RegisterButton from './components/RegisterButton/RegisterButton';
 import LoginForm from './components/LoginForm/LoginForm';
+import Login from './pages/Login/Login';
+import { BrowserRouter, Link, Redirect, Route, Switch } from 'react-router-dom';
 
 
 function App() { 
@@ -57,7 +59,6 @@ function App() {
   }
 
   const changeName = (newName) => {
-    console.log(newName);
     setUser({...user, name: newName});
   }
 
@@ -67,40 +68,54 @@ function App() {
 
   return (
     <>
-      <LoginForm changeName={changeName}/>
-      
-      {user.name 
-        && (
-        <UserCard 
-          username={user.name} 
-          company={user.company} 
-        />)
-      }
+      <BrowserRouter>
+        <header>
+          <h1>Registro de Ponto #599</h1>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/feriados">Feriados</Link>
+            </li>
+          </ul>
+        </header>
+        
+        <Switch> 
+          {/* Conteúdo que varia */}
 
-      <ul>
-      {employees.map((e, ind) => {
-        return (
-          <li key={ind}>{e}</li>
-        )
-      })}
-      </ul>
+          <Route exact path="/">
+            {isLogged ? 
+              (<h2>Home</h2>) :
+              (<Redirect to="/login" />)
+            }
+          </Route>
 
-      
-      {/*
+          <Route exact path="/login">
+            {isLogged ? 
+              (<Redirect to="/" />) :
+              (<>
+                <Login />
+              </>)
+            }
+          </Route>
 
-      <RegisterButton 
-        computeEntry={computeEntry} 
-        computeOut={computeOut}
-        time={time}/>
-      
-      <p>{time}</p>
-      
+          <Route exact path="/feriados">
+            {isLogged ? 
+              (<h2>Feriados</h2>) :
+              (<Redirect to="/login" />)
+            }
+          </Route>
 
-      
+        </Switch>
 
-      <p>Entrada: {entryTime ? entryTime : 'Pendente'}</p>
-      <p>Saída: {outTime ? outTime : 'Pendente'}</p>
-       */}
+        <footer>
+          <p>&copy; Todos os direitos reservados. 2020.</p>
+        </footer>
+      </BrowserRouter>
     </>
   );
 }
