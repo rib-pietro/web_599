@@ -1,19 +1,26 @@
 import './LoginForm.css';
 import React, { useState, useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
 
 function LoginForm(props) {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState(false);
 
-    useEffect(() => {
-        if (email !== '' && (email.indexOf('@') === -1 || email.indexOf('.') === -1)) {
-            setEmailError(true);
-        } else {
-            setEmailError(false);
-        }
-    }, [email]);
+    const dispatch = useDispatch();
+
+    const changeName = () => {
+        dispatch({
+            type: 'SET_NAME',
+            payload: name
+        });
+    };
+
+    const handleEmailInput = (event) => {
+        setEmail(event.target.value);
+    }
 
     return (
         <>
@@ -28,13 +35,23 @@ function LoginForm(props) {
             <div>
                 <input 
                     type="text" 
-                    placeholder="Email" 
+                    placeholder="E-mail" 
                     value={email}
-                    onChange={(e) => { setEmail(e.target.value) }}
+                    onChange={handleEmailInput}
                     />
-                {emailError && (<p>Insira um e-mail válido</p>)}
             </div>
-            <button onClick={() => { props.changeName(name) }}>Enviar</button>
+            <div>
+                <input 
+                    type="password" 
+                    placeholder="Senha" 
+                    value={password}
+                    onChange={(e) => { setPassword(e.target.value) }}
+                    />
+                {/* {emailError && (<p>Insira um e-mail válido</p>)} */}
+            </div>
+            <button onClick={changeName}>
+                Enviar
+            </button>
         </>
     )
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { connect, useSelector } from 'react-redux';
 import LoginForm from '../../components/LoginForm/LoginForm';
 
 function Login(props) {
@@ -7,14 +8,19 @@ function Login(props) {
 
   const [users, setUsers] = useState([]);
 
+  const user = useSelector((state) => {
+    return state.user;
+  });
+
   useEffect(() => {
-    const storedUsers = fromCookie();
-    if (storedUsers && storedUsers.users && storedUsers.users.length > 0) {
-      setUsers(storedUsers.users);
-    } else {
-      getUsers();
-      toCookie();
-    }
+
+    // const storedUsers = fromCookie();
+    // if (storedUsers && storedUsers.users && storedUsers.users.length > 0) {
+    //   setUsers(storedUsers.users);
+    // } else {
+    //   getUsers();
+    //   toCookie();
+    // }
   }, []);
 
   const getUsers = async () => {
@@ -39,13 +45,8 @@ function Login(props) {
   return (
     <div id="login">
       <h2>Login</h2>
-      <LoginForm/>
-      <ul>
-      {users.length > 0 ?
-        users.map((user, idx) => (
-        <li key={idx}>E-mail: {user.email}, Senha: {user.login.password}</li>
-      )) : <p>Loading...</p>}
-      </ul>
+      <p>Nome: {user.name}</p>
+      <LoginForm />
     </div>
   );
 }
